@@ -1,7 +1,7 @@
 import os
 import json
 
-with open('project_structure.json', 'r') as f:
+with open('project-structure.json', 'r') as f:
     project_structure = json.load(f)
 
 def create_project_structure(structure, path=""):
