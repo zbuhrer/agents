@@ -1,0 +1,98 @@
+{
+    "agentic-system": {
+      "type": "directory",
+      "children": [
+        {
+          "Dockerfile": { "type": "file" }
+        },
+        {
+          "docker-compose.yml": { "type": "file" }
+        },
+        {
+          ".env": { "type": "file" }
+        },
+        {
+          "README.md": { "type": "file" }
+        },
+        {
+          ".gitignore": { "type": "file" }
+        },
+        {
+          "config": {
+            "type": "directory",
+            "children": [
+              {
+                "api_config.yaml": { "type": "file" }
+              },
+              {
+                "db_config.yaml": { "type": "file" }
+              },
+              {
+                "voice_processor_config.yaml": { "type": "file" }
+              }
+            ]
+          }
+        },
+        {
+          "logs": {
+            "type": "directory",
+            "children": [
+              {
+                "api.log": { "type": "file" }
+              },
+              {
+                "db.log": { "type": "file" }
+              },
+              {
+                "voice_processor.log": { "type": "file" }
+              },
+              {
+                "ui.log": { "type": "file" }
+              }
+            ]
+          }
+        },
+        {
+          "services": {
+            "type": "directory",
+            "children": {
+              "auth", "database", "api", "voice_processor", "ui": {
+                "type": "directories_with_python_files"
+              }
+            }
+          }
+        },
+        {
+          "tests": {
+            "type": "directory",
+            "children": {
+              "__init__.py": { "type": "file" },
+              "test_auth.py", "test_database.py", "test_api.py", "test_voice_processor.py": {
+                "type": "python_test_files"
+              },
+              "ui": {
+                "type": "directory",
+                "children": {
+                  "__init__.py": { "type": "file" },
+                  "test_components.js", "test_services.js": {
+                    "type": "javascript_test_files"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "scripts": {
+            "type": "directory",
+            "children": [
+              {
+                "install-dependencies.sh": { "type": "file" }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+  
